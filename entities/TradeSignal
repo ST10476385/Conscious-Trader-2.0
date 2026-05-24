@@ -1,0 +1,68 @@
+{
+  "name": "TradeSignal",
+  "type": "object",
+  "properties": {
+    "pair": {
+      "type": "string"
+    },
+    "signal": {
+      "type": "string",
+      "enum": [
+        "BUY",
+        "SELL",
+        "HOLD"
+      ]
+    },
+    "confidence": {
+      "type": "number",
+      "description": "0-1 confidence score"
+    },
+    "risk_score": {
+      "type": "number",
+      "description": "0-1 risk score"
+    },
+    "entry": {
+      "type": "number"
+    },
+    "stop_loss": {
+      "type": "number"
+    },
+    "take_profit": {
+      "type": "number"
+    },
+    "rsi": {
+      "type": "number"
+    },
+    "ma9": {
+      "type": "number"
+    },
+    "ma21": {
+      "type": "number"
+    },
+    "trend": {
+      "type": "string",
+      "enum": [
+        "bullish",
+        "bearish",
+        "neutral"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "approved",
+        "rejected",
+        "expired"
+      ],
+      "default": "pending"
+    },
+    "reasoning": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "pair",
+    "signal"
+  ]
+}

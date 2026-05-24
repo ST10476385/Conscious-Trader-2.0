@@ -1,0 +1,55 @@
+{
+  "name": "Webhook",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Friendly name for this webhook"
+    },
+    "url": {
+      "type": "string",
+      "description": "Destination URL to POST events to"
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "signal.created",
+          "signal.approved",
+          "signal.rejected",
+          "trade.opened",
+          "trade.closed",
+          "risk.limit_breached"
+        ]
+      },
+      "description": "List of events to subscribe to"
+    },
+    "secret": {
+      "type": "string",
+      "description": "Optional secret for HMAC signing"
+    },
+    "enabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "last_triggered": {
+      "type": "string",
+      "description": "ISO timestamp of last successful delivery"
+    },
+    "last_status": {
+      "type": "string",
+      "enum": [
+        "success",
+        "failed",
+        "pending"
+      ],
+      "description": "Status of last delivery attempt"
+    }
+  },
+  "required": [
+    "name",
+    "url",
+    "events"
+  ]
+}

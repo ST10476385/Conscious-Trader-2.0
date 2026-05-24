@@ -1,0 +1,55 @@
+{
+  "name": "TradingSettings",
+  "type": "object",
+  "properties": {
+    "mode": {
+      "type": "string",
+      "enum": [
+        "paper",
+        "demo",
+        "live"
+      ],
+      "default": "paper"
+    },
+    "initial_balance": {
+      "type": "number",
+      "default": 10000
+    },
+    "current_balance": {
+      "type": "number",
+      "default": 10000
+    },
+    "max_risk_per_trade": {
+      "type": "number",
+      "default": 2,
+      "description": "Max % risk per trade"
+    },
+    "max_daily_loss": {
+      "type": "number",
+      "default": 5,
+      "description": "Max daily loss %"
+    },
+    "max_open_trades": {
+      "type": "number",
+      "default": 3
+    },
+    "preferred_pairs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "EUR/USD",
+        "GBP/USD",
+        "BTC/USD"
+      ]
+    },
+    "auto_approve": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": [
+    "mode"
+  ]
+}

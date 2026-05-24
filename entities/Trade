@@ -1,0 +1,87 @@
+{
+  "name": "Trade",
+  "type": "object",
+  "properties": {
+    "pair": {
+      "type": "string",
+      "description": "Trading pair e.g. EUR/USD, BTC/USD"
+    },
+    "direction": {
+      "type": "string",
+      "enum": [
+        "BUY",
+        "SELL"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "open",
+        "closed",
+        "cancelled"
+      ],
+      "default": "open"
+    },
+    "entry_price": {
+      "type": "number"
+    },
+    "current_price": {
+      "type": "number"
+    },
+    "stop_loss": {
+      "type": "number"
+    },
+    "take_profit": {
+      "type": "number"
+    },
+    "position_size": {
+      "type": "number",
+      "description": "Lot size or quantity"
+    },
+    "pnl": {
+      "type": "number",
+      "default": 0
+    },
+    "pnl_percent": {
+      "type": "number",
+      "default": 0
+    },
+    "close_price": {
+      "type": "number"
+    },
+    "close_reason": {
+      "type": "string",
+      "enum": [
+        "tp_hit",
+        "sl_hit",
+        "manual",
+        "signal"
+      ]
+    },
+    "confidence": {
+      "type": "number",
+      "description": "Signal confidence 0-1"
+    },
+    "risk_score": {
+      "type": "number",
+      "description": "Risk score 0-1"
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "paper",
+        "demo",
+        "live"
+      ],
+      "default": "paper"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "pair",
+    "direction",
+    "entry_price"
+  ]
+}
